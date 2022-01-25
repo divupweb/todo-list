@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="scss/style.scss" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header id="header" class="overlay">
+      <div class="shared__container">
+        <div class="overlay__notification">
+          <h3 class="overlay__notification-title">Hi, you there</h3>
+          <div class="overlay__notification-text">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel ex fugit autem
+              accusantium alias ad laboriosam earum voluptate possimus modi.
+            </p>
+          </div>
+          <button id="overlay_button" class="overlay__notification-button js-header-start">Accept</buttonid=class=>
+        </div>
+      </div>
+    </header>
+    <section  class="menu">
+        <div class=shared__container>
+          <nav>
+            <ul class="menu__wrapper">
+                <li class="menu__item menu__item_active" data-menu-item="0">posts</li>
+                <li class="menu__item" data-menu-item="1">create</li>
+                <li class="menu__item" data-menu-item="2">favourite</li>
+            </ul>
+         </nav>
+       </div>
+    </section>
+    <main>
+        <section class="posts section_show" data-section="0">
+            <div class="shared__container">
+            <div class="posts__wrapper">
+              <div class="posts__item">
+                <div class="posts__item-head"><h3 class="posts__item-title">p1</h3><span class="posts__item-type">zz</span></div>
+                <div class="posts__item-text"><p>sdsdsd</p></div>
+                <div class="posts__item-footer"><span class="posts__item-data">15.03.2020</span><button class="posts__item-button">add to favourite</button></div>
+              </div>
+              <div class="posts__item">
+                <div class="posts__item-head"><h3 class="posts__item-title">p1</h3><span class="posts__item-type">zz</span></div>
+                <div class="posts__item-text"><p>sdsdsd</p></div>
+                <div class="posts__item-footer"><span class="posts__item-data">15.03.2020</span><button class="posts__item-button">add to favourite</button></div>
+              </div>
+              <div class="posts__item">
+                <div class="posts__item-head"><h3 class="posts__item-title">p1</h3><span class="posts__item-type">zz</span></div>
+                <div class="posts__item-text"><p>sdsdsd</p></div>
+                <div class="posts__item-footer"><span class="posts__item-data">15.03.2020</span><button class="posts__item-button">add to favourite</button></div>
+              </div>
+            </div>
+        </div>
+        </section>
+        <section class="create-posts" data-section="1">
+          <div class="shared__container">
+            <h2>Create new post</h2>
+            <form>
+              <div>
+                <label for="post_title">title</label>
+                <input id="post_title" name = "post_title">
+              </div>
+              <div>
+                <label for="post_text">text</label>
+                <textarea id="post_text" name = "post_text"></textarea>
+              </div>
+              <div>
+                <label for="post_type">type</label>
+                <select id="post_type"><option>new</option><option>static</option></select>
+              </div>
+              <button>create</button>
+          </form>
+          </div>
+        </section>
+        <section class="favourite" data-section="2">
+          <div class="shared__container">
+            <h2>fabourite</h2>
+            <div class="favourite__wrapper">
+              <div class="favourite__item">
+                <div class="favourite__item-head"><h3 class="favourite__item-title">p1</h3><span class="favourite__item-type">zz</span></div>
+                <div class="favourite__item-text"><p>sdsdsd</p></div>
+                <div class="favourite__item-footer"><span class="favourite__item-data">15.03.2020</span><button class="favourite__item-button">remove</button></div>
+              </div>
+            </div>
+          </div>
+        </section>
+    </main>
+    <script src="js/index.js"></script>
+  </body>
+</html>
