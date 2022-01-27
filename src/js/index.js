@@ -1,6 +1,12 @@
 import { HeaderComponents } from "../components/header.components";
-new HeaderComponents("header");
+import {NavigationComponents}  from '../components/navigation.components'
+import {CreatePostsComponets} from '../components/createPosts.components'
+import {FavouriteComponents} from '../components/favourite.components'
 
+new HeaderComponents("header");
+let navigation = new NavigationComponents('navigation');
+let createPosts = new CreatePostsComponets('posts');
+let favourite = new FavouriteComponents('favourite');
 // const $OVERLAY = document.getElementById("overlay");
 // localStorage.getItem("privacy") ? $OVERLAY.classList.add("overlay_hide") : null;
 

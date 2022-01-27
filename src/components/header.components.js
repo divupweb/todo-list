@@ -6,14 +6,13 @@ export class HeaderComponents extends Component{
     }
     init = () =>{
         const $BTN = this.$element.querySelector('.js-header-start');
-        $BTN.addEventListener('click', () => {
-          buttonHandler.bind(this)();
-        })
+        localStorage.getItem('privacy') ? this.hide() : null;
+        $BTN.addEventListener('click',buttonHandler.bind(this));
     }
 }
 
 
 function buttonHandler() {
-    console.log(this)
     this.hide();
+    localStorage.setItem('privacy',true);
 }

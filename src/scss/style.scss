@@ -51,7 +51,10 @@ body {
     cursor: pointer;
   }
   &__item_active {
-    color: red;
+    a{
+      color: red;
+    }
+
   }
 }
 
