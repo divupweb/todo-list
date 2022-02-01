@@ -8,6 +8,8 @@
 body {
   background: grey;
   color: white;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
 }
 .shared {
   &__container {
@@ -18,6 +20,10 @@ body {
   &__section-hide {
     display: none !important;
   }
+  &__section-fade-out {
+    animation: fade-out 2s ease;
+    animation-fill-mode: forwards;
+  }
 }
 
 .overlay {
@@ -25,19 +31,44 @@ body {
   width: 100%;
   position: absolute;
   height: 100vh;
-  background-color: black;
+  background-color: rgb(41, 41, 41);
   display: flex;
   align-items: center;
-  top:0;
+  top: 0;
   &__notification {
     color: white;
     text-align: center;
     padding: 20px;
-    background-color: red;
+    max-width: 500px;
+    &-title {
+      font-size: 2rem;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    &-text {
+      margin: 25px 0;
+      color: grey;
+    }
+    &-button {
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      font-size: 1.25rem;
+      border-radius: 50px;
+    }
+    &-button:hover {
+      background-color: grey;
+      color: white;
+    }
   }
-  &__notification-button {
-    border: none;
-    padding: 10px 20px;
+  &__notification::before {
+    content: "";
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid white;
+    margin-bottom: 50px;
   }
 }
 
@@ -51,10 +82,9 @@ body {
     cursor: pointer;
   }
   &__item_active {
-    a{
+    a {
       color: red;
     }
-
   }
 }
 
@@ -64,37 +94,43 @@ body {
 
 .posts {
   display: none;
-  &__item{
+  &__item {
     width: 400px;
   }
-  &__item-head{
+  &__item-head {
     display: flex;
     justify-content: space-between;
   }
-  &__item-footer{
+  &__item-footer {
     display: flex;
     justify-content: space-between;
   }
 }
 
-
-.create-posts{
+.create-posts {
   display: none;
 }
-
 
 .favourite {
   display: none;
-  &__item{
+  &__item {
     width: 400px;
-  
   }
-  &__item-head{
+  &__item-head {
     display: flex;
     justify-content: space-between;
   }
-  &__item-footer{
+  &__item-footer {
     display: flex;
     justify-content: space-between;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
