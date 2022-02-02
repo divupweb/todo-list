@@ -6,7 +6,6 @@ export class NavigationComponent extends Component {
     this.init();
   }
   init = () => {
-    console.log(this.$element);
     this.$element.addEventListener("click", tabClickHandler.bind(this));
   };
   registerTabs = (tabs) => {
@@ -23,7 +22,6 @@ function tabClickHandler(event) {
     : event.target.parentNode.parentNode.classList.contains("menu__item")
     ? event.target.parentNode.parentNode
     : null;
-  console.log(target);
   if (target) {
     Array.from(this.$element.querySelectorAll(".menu__item")).forEach((tab) => {
       tab.classList.contains("menu__item_active")
@@ -36,9 +34,9 @@ function tabClickHandler(event) {
       obj.component.$element.classList.remove("shared_page-show");
     });
 
-    const activeTab = this.tabs.find(
+    const $activeTab = this.tabs.find(
       (obj) => obj.component.$element.dataset.page == target.dataset.menuItem
     );
-    activeTab.component.$element.classList.add("shared_page-show");
+    $activeTab.component.$element.classList.add("shared_page-show");
   }
 }

@@ -29,23 +29,86 @@ body {
   &_page-show {
     display: block !important;
   }
+  &__title {
+    text-transform: uppercase;
+    color: #a65353;
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+  }
+  &__description {
+    color: #a65353;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    display: block;
+  }
+  &__posts {
+    &-wrapper {
+      margin: 0 -15px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    &-item {
+      width: 400px;
+      font-size: 1rem;
+      padding: 20px;
+      border: 1px solid #f1f1f1;
+      border-radius: 5px;
+      margin: 15px;
+      &-title {
+        color: #bfbfbf;
+        font-size: 1rem;
+        span {
+          text-transform: capitalize;
+          color: rgb(50, 40, 50);
+          font-size: 1.2rem;
+        }
+      }
+      &-text {
+        margin: 10px 0;
+      }
+      &-type {
+        color: #a65353;
+      }
+      &-data {
+        color: #bfbfbf;
+        font-size: 0.8rem;
+      }
+      &-button {
+        color: #bfbfbf;
+        transition: all 0.3s ease;
+      }
+      &-button:hover {
+        color: #a65353;
+      }
+      &-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      &-footer {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
 }
 
 .overlay {
   z-index: 1;
   width: 100%;
-  position: absolute;
-  height: 100vh;
+  position: fixed;
   background-color: rgb(41, 41, 41);
   display: flex;
   align-items: center;
   top: 0;
+  min-width: 100%;
+  min-height: 100%;
   &__video {
-    position: fixed;
     opacity: 0.1;
-    z-index: 0;
     min-width: 100%;
     min-height: 100%;
+    position: fixed;
   }
   &__wrapper {
     z-index: 1;
@@ -101,6 +164,7 @@ body {
     background: white;
     color: black;
     padding: 20px;
+    min-height: 100vh;
   }
 }
 
@@ -115,13 +179,14 @@ body {
   &__item {
     cursor: pointer;
     width: 100%;
-    padding: 10px 0 10px 25px;
+
     a {
       display: flex;
       font-size: 1rem;
       text-transform: uppercase;
       color: #998299;
       align-items: center;
+      padding: 10px 0 10px 25px;
     }
     &-text {
       margin-left: 15px;
@@ -132,17 +197,16 @@ body {
       color: white;
     }
   }
+  &__item:nth-child(3) {
+    margin-left: -3px;
+  }
 }
 
 .posts {
   display: none;
-  &__title {
-    text-transform: uppercase;
-    color: #a65353;
-    font-size: 1.7rem;
-  }
+
   &__wrapper {
-    margin: 20px -15px 0;
+    margin: 0 -15px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -194,21 +258,70 @@ body {
 
 .create-posts {
   display: none;
+  &__form {
+    width: 440px;
+  }
+  &__field {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+    font-size: 1rem;
+    &-label {
+      padding: 0 10px;
+      height: 40px;
+      border: 1px solid red;
+      display: flex;
+      align-items: center;
+      border: 1px solid #22272d;
+      cursor: pointer;
+    }
+    &-title {
+      padding: 0 10px;
+      height: 40px;
+      border: 1px solid #22272d;
+      border-left: none;
+      width: 100%;
+      outline: none;
+      font-size: 0.9rem;
+    }
+    &-type {
+      height: 40px;
+      border: 1px solid #22272d;
+      border-left: none;
+      width: 100%;
+      outline: none;
+      background: white;
+      padding-left: 6px;
+      cursor: pointer;
+      option {
+        height: 40px;
+      }
+    }
+    &-text {
+      width: 100%;
+      height: 300px;
+      padding: 10px;
+      outline: none;
+      border: 1px solid #22272d;
+      resize: none;
+    }
+  }
+  &__button {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+  }
+  &__button:hover {
+    background-color: grey;
+    color: white;
+  }
 }
 
 .favourite {
   display: none;
-  &__item {
-    width: 400px;
-  }
-  &__item-head {
-    display: flex;
-    justify-content: space-between;
-  }
-  &__item-footer {
-    display: flex;
-    justify-content: space-between;
-  }
 }
 
 @keyframes fade-out {
@@ -221,6 +334,14 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  .shared {
+    &__title {
+      text-align: center;
+    }
+    &__description {
+      text-align: center;
+    }
+  }
   .main {
     flex-direction: column;
   }
@@ -231,7 +352,6 @@ body {
       padding: 0;
     }
     &__item {
-      padding: 0px;
       &-text {
         display: none;
       }
@@ -239,6 +359,15 @@ body {
         justify-content: center;
         padding: 20px 0;
       }
+    }
+    &__item:nth-child(3) {
+      margin-left: 0;
+    }
+  }
+  .create-posts {
+    &__form {
+      margin: 0 auto;
+      width: 100%;
     }
   }
 }
