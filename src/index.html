@@ -8,13 +8,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="scss/style.scss" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
   </head>
   <body>
     <header id="header" class="overlay">
-      <div class="shared__container">
+      <video class="overlay__video" autoplay muted loop>
+        <source src="./videos/bg-video.mp4" type="video/mp4">
+      </video>
+      <div class="shared__container overlay__wrapper">
         <div class="overlay__notification">
-          <h3 class="overlay__notification-title">to-do list project</h3>
+          <h1 class="overlay__notification-title">to-do list project</h1>
           <div class="overlay__notification-text">
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel ex fugit autem
@@ -25,41 +29,68 @@
         </div>
       </div>
     </header>
-    <section  id="navigation" class="menu">
-        <div class=shared__container>
-          <nav>
-            <ul class="menu__wrapper">
-                <li class="menu__item menu__item_active" data-menu-item="0"><a href="/posts" title="posts">posts</a></li>
-                <li class="menu__item" data-menu-item="1"><a href="/create" title="create">create</a></li>
-                <li class="menu__item" data-menu-item="2"><a href="/favourite" title="favourite">favourite</a></li>
-            </ul>
-         </nav>
-       </div>
-    </section>
-    <main>
-        <section id="posts" class="posts section_show" data-section="0">
-            <div class="shared__container">
+    <main class="main">
+        <nav id="navigation" class="menu">
+          <ul class="menu__wrapper">
+              <li class="menu__item menu__item_active" data-menu-item="0"><a href="/posts" title="posts"><i class="far fa-sticky-note"></i><span class="menu__item-text">posts</span></a></li>
+              <li class="menu__item" data-menu-item="1"><a href="/create" title="create"><i class="far fa-plus-square"></i><span class="menu__item-text">create</a></span></li>
+              <li class="menu__item" data-menu-item="2"><a href="/favourite" title="favourite"><i class="far fa-star"></i><span class="menu__item-text">favourite</a></span></li>
+          </ul>
+      </nav>
+
+      <div class="main__wrapper"> 
+        <div id="posts" class="posts shared_page-show" data-page="0">
+            <h2 class="posts__title">current posts list</h2>
             <div class="posts__wrapper">
               <div class="posts__item">
-                <div class="posts__item-head"><h3 class="posts__item-title">p1</h3><span class="posts__item-type">zz</span></div>
-                <div class="posts__item-text"><p>sdsdsd</p></div>
-                <div class="posts__item-footer"><span class="posts__item-data">15.03.2020</span><button class="posts__item-button">add to favourite</button></div>
+                <div class="posts__item-head"><h4 class="posts__item-title"><span>some post title</span></h4><span class="posts__item-type">new</span></div>
+                <div class="posts__item-text"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum quod obcaecati sed fugit aspernatur impedit cupiditate nostrum laboriosam quisquam placeat.</p></div>
+                <div class="posts__item-footer"><span class="posts__item-data">15.03.2020</span><a href="#" title="add to favourite" class="posts__item-button"><i class="far fa-star"></i></a></div>
               </div>
               <div class="posts__item">
-                <div class="posts__item-head"><h3 class="posts__item-title">p1</h3><span class="posts__item-type">zz</span></div>
-                <div class="posts__item-text"><p>sdsdsd</p></div>
-                <div class="posts__item-footer"><span class="posts__item-data">15.03.2020</span><button class="posts__item-button">add to favourite</button></div>
+                <div class="posts__item-head"><h4 class="posts__item-title"><span>some post title</span></h4><span class="posts__item-type">new</span></div>
+                <div class="posts__item-text"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum quod obcaecati sed fugit aspernatur impedit cupiditate nostrum laboriosam quisquam placeat.</p></div>
+                <div class="posts__item-footer"><span class="posts__item-data">15.03.2020</span><a href="#" title="add to favourite" class="posts__item-button"><i class="far fa-star"></i></a></div>
               </div>
               <div class="posts__item">
-                <div class="posts__item-head"><h3 class="posts__item-title">p1</h3><span class="posts__item-type">zz</span></div>
-                <div class="posts__item-text"><p>sdsdsd</p></div>
-                <div class="posts__item-footer"><span class="posts__item-data">15.03.2020</span><button class="posts__item-button">add to favourite</button></div>
+                <div class="posts__item-head"><h4 class="posts__item-title"><span>some post title</span></h4><span class="posts__item-type">new</span></div>
+                <div class="posts__item-text"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum quod obcaecati sed fugit aspernatur impedit cupiditate nostrum laboriosam quisquam placeat.</p></div>
+                <div class="posts__item-footer"><span class="posts__item-data">15.03.2020</span><a href="#" title="add to favourite" class="posts__item-button"><i class="far fa-star"></i></a></div>
+              </div>
+              <div class="posts__item">
+                <div class="posts__item-head"><h4 class="posts__item-title"><span>some post title</span></h4><span class="posts__item-type">new</span></div>
+                <div class="posts__item-text"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum quod obcaecati sed fugit aspernatur impedit cupiditate nostrum laboriosam quisquam placeat.</p></div>
+                <div class="posts__item-footer"><span class="posts__item-data">15.03.2020</span><a href="#" title="add to favourite" class="posts__item-button"><i class="far fa-star"></i></a></div>
+              </div>
+              <div class="posts__item">
+                <div class="posts__item-head"><h4 class="posts__item-title"><span>some post title</span></h4><span class="posts__item-type">new</span></div>
+                <div class="posts__item-text"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum quod obcaecati sed fugit aspernatur impedit cupiditate nostrum laboriosam quisquam placeat.</p></div>
+                <div class="posts__item-footer"><span class="posts__item-data">15.03.2020</span><a href="#" title="add to favourite" class="posts__item-button"><i class="far fa-star"></i></a></div>
+              </div>
+              <div class="posts__item">
+                <div class="posts__item-head"><h4 class="posts__item-title"><span>some post title</span></h4><span class="posts__item-type">new</span></div>
+                <div class="posts__item-text"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum quod obcaecati sed fugit aspernatur impedit cupiditate nostrum laboriosam quisquam placeat.</p></div>
+                <div class="posts__item-footer"><span class="posts__item-data">15.03.2020</span><a href="#" title="add to favourite" class="posts__item-button"><i class="far fa-star"></i></a></div>
+              </div>
+              <div class="posts__item">
+                <div class="posts__item-head"><h4 class="posts__item-title"><span>some post title</span></h4><span class="posts__item-type">new</span></div>
+                <div class="posts__item-text"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum quod obcaecati sed fugit aspernatur impedit cupiditate nostrum laboriosam quisquam placeat.</p></div>
+                <div class="posts__item-footer"><span class="posts__item-data">15.03.2020</span><a href="#" title="add to favourite" class="posts__item-button"><i class="far fa-star"></i></a></div>
+              </div>
+              <div class="posts__item">
+                <div class="posts__item-head"><h4 class="posts__item-title"><span>some post title</span></h4><span class="posts__item-type">new</span></div>
+                <div class="posts__item-text"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum quod obcaecati sed fugit aspernatur impedit cupiditate nostrum laboriosam quisquam placeat.</p></div>
+                <div class="posts__item-footer"><span class="posts__item-data">15.03.2020</span><a href="#" title="add to favourite" class="posts__item-button"><i class="far fa-star"></i></a></div>
+              </div>
+              <div class="posts__item">
+                <div class="posts__item-head"><h4 class="posts__item-title"><span>some post title</span></h4><span class="posts__item-type">new</span></div>
+                <div class="posts__item-text"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum quod obcaecati sed fugit aspernatur impedit cupiditate nostrum laboriosam quisquam placeat.</p></div>
+                <div class="posts__item-footer"><span class="posts__item-data">15.03.2020</span><a href="#" title="add to favourite" class="posts__item-button"><i class="far fa-star"></i></a></div>
               </div>
             </div>
         </div>
-        </section>
-        <section class="create-posts" data-section="1">
-          <div class="shared__container">
+        <div id="create_posts" class="create-posts" data-page="1">
+
             <h2>Create new post</h2>
             <form>
               <div>
@@ -77,10 +108,10 @@
               </div>
               <button>create</button>
           </form>
-          </div>
-        </section>
-        <section class="favourite" data-section="2">
-          <div class="shared__container">
+
+        </div>
+        <div id="favourite" class="favourite" data-page="2">
+
             <h2>fabourite</h2>
             <div class="favourite__wrapper">
               <div class="favourite__item">
@@ -89,8 +120,10 @@
                 <div class="favourite__item-footer"><span class="favourite__item-data">15.03.2020</span><button class="favourite__item-button">remove</button></div>
               </div>
             </div>
-          </div>
-        </section>
+
+        </div>
+      </div>
+ 
     </main>
     <script src="js/index.js"></script>
   </body>

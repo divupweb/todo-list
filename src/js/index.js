@@ -1,12 +1,20 @@
-import { HeaderComponents } from "../components/header.components";
-import {NavigationComponents}  from '../components/navigation.components'
-import {CreatePostsComponets} from '../components/createPosts.components'
-import {FavouriteComponents} from '../components/favourite.components'
+import { HeaderComponent } from "../components/header.components";
+import { NavigationComponent } from "../components/navigation.components";
+import { CreatePostsComponet } from "../components/createPosts.components";
+import { FavouriteComponent } from "../components/favourite.components";
+import { PostsComponet } from "../components/posts.components";
 
-new HeaderComponents("header");
-let navigation = new NavigationComponents('navigation');
-let createPosts = new CreatePostsComponets('posts');
-let favourite = new FavouriteComponents('favourite');
+new HeaderComponent("header");
+let navigation = new NavigationComponent("navigation");
+let posts = new PostsComponet("posts");
+let createPosts = new CreatePostsComponet("create_posts");
+let favourite = new FavouriteComponent("favourite");
+navigation.registerTabs([
+  { name: "posts", component: posts },
+  { name: "create-posts", component: createPosts },
+  { name: "favourite", component: favourite },
+]);
+
 // const $OVERLAY = document.getElementById("overlay");
 // localStorage.getItem("privacy") ? $OVERLAY.classList.add("overlay_hide") : null;
 
@@ -27,8 +35,8 @@ let favourite = new FavouriteComponents('favourite');
 //     event.target.classList.add("header__menu-item_active");
 //     $SECTIONS.forEach((section) => {
 //       section.dataset.section == event.target.dataset.menuItem
-//         ? section.classList.add("section_show")
-//         : section.classList.remove("section_show");
+//         ? section.classList.add("shared_page-show")
+//         : section.classList.remove("shared_page-show");
 //       console.log(section.dataset.section);
 //       console.log(event.target.dataset.menuItem);
 //     });

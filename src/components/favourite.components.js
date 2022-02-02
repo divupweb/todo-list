@@ -1,10 +1,8 @@
-import {Component} from '../core/component'
-export class FavouriteComponents extends Component{
-    constructor(id){
-        super(id);
-        this.init();
-    }
-    init = () =>{
-        console.log('favourite');
-    }
+import { Component } from "../core/component";
+export class FavouriteComponent extends Component {
+  constructor(id) {
+    super(id);
+    this.init();
+  }
+  init = () => {};
 }

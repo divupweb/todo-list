@@ -1,5 +1,5 @@
 import { Component } from "../core/component";
-export class HeaderComponents extends Component {
+export class HeaderComponent extends Component {
   constructor(id) {
     super(id);
     this.init();

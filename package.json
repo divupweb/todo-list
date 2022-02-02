@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/divupweb/todo-list#readme",
   "devDependencies": {
-    "sass": "^1.49.0"
+    "sass": "^1.49.4"
   }
 }
