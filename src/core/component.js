@@ -17,4 +17,23 @@ export class Component {
   show = () => {
     this.$element.classList.remove("shared__section-hide");
   };
+
+  textAnimation = ($elements, text) => {
+    Array.from($elements).forEach(($element) => {
+      let text_array = text.split("");
+      for (let i = 0; i < text_array.length; i++) {
+        setTimeout(() => {
+          if ((i + 1) % 2 == 0) {
+            $element.textContent = $element.textContent.substr(
+              0,
+              $element.textContent.length - 1
+            );
+            $element.textContent += text_array[i];
+          } else {
+            $element.textContent += text_array[i] + "█";
+          }
+        }, i * 75);
+      }
+    });
+  };
 }

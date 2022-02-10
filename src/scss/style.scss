@@ -28,6 +28,7 @@ body {
   }
   &_page-show {
     display: block !important;
+    animation: fade-in 1s ease;
   }
   &__title {
     text-transform: uppercase;
@@ -122,6 +123,7 @@ body {
       font-size: 2rem;
       text-transform: uppercase;
       font-weight: 600;
+      min-height: 45px;
     }
     &-text {
       margin: 25px 0;
@@ -330,6 +332,15 @@ body {
   }
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 

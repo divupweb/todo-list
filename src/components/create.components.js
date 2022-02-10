@@ -1,5 +1,6 @@
 import { Component } from "../core/component";
 import { Form } from "../core/form";
+import { Validators } from "../core/validators";
 
 export class CreateComponent extends Component {
   constructor(id) {
@@ -7,12 +8,23 @@ export class CreateComponent extends Component {
     this.init();
   }
   init = () => {
-    const $form_create = document.getElementById("create_posts_form");
-    $form_create.addEventListener("submit", submitHandler.bind(this));
-    this.form = new Form($form_create, { title: [], fulltext: [] });
+    this.$form_create = document.getElementById("create_posts_form");
+    this.$form_create.addEventListener("submit", submitHandler.bind(this));
+    this.form = new Form(this.$form_create, {
+      title: [Validators.required],
+      fulltext: [Validators.required, Validators.minLength(10)],
+    });
   };
 }
 
 function submitHandler(event) {
   event.preventDefault();
+  console.log();
+  const formData = {
+    type: this.$form_create.post_type.value,
+    date: new Date().toLocaleDateString(),
+    ...this.form.value(),
+  };
+  console.log(formData);
+  this.form.clear();
 }

@@ -12,13 +12,14 @@
     <title>Document</title>
   </head>
   <body>
-    <header id="header" class="overlay">
+
+    <header id="header" class="overlay ">
       <video class="overlay__video" autoplay muted loop>
         <source src="./videos/bg-video.mp4" type="video/mp4">
       </video>
       <div class="shared__container overlay__wrapper">
         <div class="overlay__notification">
-          <h1 class="overlay__notification-title">to-do list project</h1>
+          <h1 class="overlay__notification-title shared_text-animation"></h1>
           <div class="overlay__notification-text">
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel ex fugit autem
@@ -103,7 +104,7 @@
                 <select class="create-posts__field-type" id="post_type"><option>new</option><option>static</option></select>
               </div>
               <div class="create-posts__field">
-                <textarea class="create-posts__field-text" id="post_text" name = "post_text" autocomplete="off" placeholder="Enter post's description" noresize></textarea>
+                <textarea class="create-posts__field-text" id="post_text" name = "fulltext" autocomplete="off" placeholder="Enter post's description" noresize></textarea>
               </div>
               <button type="submit" class="create-posts__button">create post</button>
           </form>
