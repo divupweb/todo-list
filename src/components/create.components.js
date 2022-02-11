@@ -19,12 +19,14 @@ export class CreateComponent extends Component {
 
 function submitHandler(event) {
   event.preventDefault();
-  console.log();
-  const formData = {
-    type: this.$form_create.post_type.value,
-    date: new Date().toLocaleDateString(),
-    ...this.form.value(),
-  };
-  console.log(formData);
-  this.form.clear();
+
+  if (this.form.isValid()) {
+    const formData = {
+      type: this.$form_create.post_type.value,
+      date: new Date().toLocaleDateString(),
+      ...this.form.value(),
+    };
+    console.log(formData);
+    this.form.clear();
+  }
 }
