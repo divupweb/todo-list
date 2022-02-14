@@ -1,0 +1,56 @@
+.overlay {
+  z-index: 1;
+  width: 100%;
+  position: fixed;
+  background-color: rgb(41, 41, 41);
+  display: flex;
+  align-items: center;
+  top: 0;
+  min-width: 100%;
+  min-height: 100%;
+  &__video {
+    opacity: 0.1;
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+  }
+  &__wrapper {
+    z-index: 1;
+  }
+  &__notification {
+    color: white;
+    text-align: center;
+    padding: 20px;
+    max-width: 500px;
+    &-title {
+      font-size: 2rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      min-height: 45px;
+    }
+    &-text {
+      margin: 25px 0;
+      color: rgb(200, 200, 200);
+    }
+    &-button {
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      font-size: 1.25rem;
+      border-radius: 50px;
+    }
+    &-button:hover {
+      background-color: grey;
+      color: white;
+    }
+  }
+  &__notification::before {
+    content: "";
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid white;
+    margin-bottom: 50px;
+  }
+}

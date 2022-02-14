@@ -95,18 +95,24 @@
           <h2 class="shared__title">create post</h2>
           <span class="shared__description">On this page, you can create a request to add a post to the database.</span>
             <form id="create_posts_form" name="create_posts_form" class="create-posts__form">
-              <div class="create-posts__field">
-                <label class="create-posts__field-label" for="post_title"><i class="fas fa-heading"></i></label>
-                <input name="title" class="create-posts__field-title" id="post_title" name = "post_title" placeholder="Enter post's title" autocomplete="off">
+              <div class="create-posts__wrap">
+                <div class="create-posts__field">
+                  <label class="create-posts__field-label" for="post_title"><i class="fas fa-heading"></i></label>
+                  <input name="title" class="create-posts__field-title" id="post_title" name = "post_title" placeholder="Enter post's title" autocomplete="off">
+                </div>
               </div>
-              <div class="create-posts__field">
-                <label class="create-posts__field-label" for="post_type"><i class="fas fa-radiation"></i></label>
-                <select class="create-posts__field-type" id="post_type"><option>new</option><option>static</option></select>
+              <div class="create-posts__wrap">
+                <div class="create-posts__field">
+                  <label class="create-posts__field-label" for="post_type"><i class="fas fa-radiation"></i></label>
+                  <select class="create-posts__field-type" id="post_type"><option>new</option><option>static</option></select>
+                </div>
               </div>
-              <div class="create-posts__field">
-                <textarea class="create-posts__field-text" id="post_text" name = "fulltext" autocomplete="off" placeholder="Enter post's description" noresize></textarea>
+              <div class="create-posts__wrap">
+                <div class="create-posts__field">
+                  <textarea class="create-posts__field-text" id="post_text" name = "fulltext" autocomplete="off" placeholder="Enter post's description" noresize></textarea>
+                </div>
               </div>
-              <button type="submit" class="create-posts__button">create post</button>
+              <button id="form_button" type="submit" class="create-posts__button">create post</button>
           </form>
 
         </div>
@@ -134,5 +140,6 @@
       </div>
     </main>
     <script src="js/index.js"></script>
+    <div id="notifications" class="shared__notifications"></div>
   </body>
 </html>

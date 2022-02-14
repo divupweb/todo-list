@@ -3,6 +3,7 @@ export class Form {
     this.form = form;
     this.controls = controls;
   }
+
   value() {
     const value = {};
     Object.keys(this.controls).forEach((control) => {
@@ -10,6 +11,7 @@ export class Form {
     });
     return value;
   }
+
   clear() {
     Object.keys(this.controls).forEach((control) => {
       this.form[control].value = "";
@@ -34,21 +36,19 @@ export class Form {
     return isFormValid;
   }
 }
+
 function setError($control) {
   clearError($control);
   const error = `<p class='shared__validation-error'>Notification: violated rules</p>`;
   $control.parentNode.classList.add("shared__invalid");
   $control.parentNode.insertAdjacentHTML("afterend", error);
 }
+
 function clearError($control) {
-  console.log($control);
-  // document.querySelectorAll(".shared__validation-error").forEach((item) => {
-  //   item.remove();
-  // });
-  // if ($control.parentNode.closest(".shared__validation-error"))
-  //    $control.parentNode.closest(".shared__validation-error").remove();
-  // console.log($control.parentNode.closest(".shared__validation-error"));
-  // if (document.querySelector(".shared__validation-error")) {
-  //   document.querySelector(".shared__validation-error").remove();
-  // }
+  if ($control.parentNode.nextSibling) {
+    $control
+      .closest(".create-posts__wrap")
+      .removeChild($control.parentNode.nextSibling);
+    $control.parentNode.classList.remove("shared__invalid");
+  }
 }

@@ -31,12 +31,15 @@ function tabClickHandler(event) {
     target.classList.add("menu__item_active");
 
     this.tabs.forEach((obj) => {
-      obj.component.$element.classList.remove("shared_page-show");
+      // obj.component.$element.classList.remove("shared_page-show");
+      return obj.component.hide();
     });
 
     const $activeTab = this.tabs.find(
       (obj) => obj.component.$element.dataset.page == target.dataset.menuItem
     );
-    $activeTab.component.$element.classList.add("shared_page-show");
+    //$activeTab.component.$element.classList.add("shared_page-show");
+
+    $activeTab.component.show();
   }
 }

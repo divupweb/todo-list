@@ -4,7 +4,12 @@ export class Component {
     this.init();
   }
   init = () => {};
-  hide = (trigger) => {
+
+  hide = () => {
+    this.$element.classList.remove("shared_page-show");
+  };
+
+  privacyHide = (trigger) => {
     if (trigger) {
       this.$element.classList.add("shared__section-hide");
     } else {
@@ -14,8 +19,9 @@ export class Component {
       }, 2000);
     }
   };
+
   show = () => {
-    this.$element.classList.remove("shared__section-hide");
+    this.$element.classList.add("shared_page-show");
   };
 
   textAnimation = ($elements, text) => {
@@ -35,5 +41,19 @@ export class Component {
         }, i * 75);
       }
     });
+  };
+
+  notification = (type, message) => {
+    const $notification = document.createElement("div");
+    $notification.classList.add("shared__notification");
+    type == true
+      ? $notification.classList.add("shared__notification_success")
+      : $notification.classList.add("shared__notification_error");
+    $notification.innerHTML = `<p class="shared__notification-message"><span class="shared__notification-title">Notification: </span>${message}</p>`;
+    document.getElementById("notifications").appendChild($notification);
+    setTimeout(() => {
+      $notification.remove();
+      return;
+    }, 5000);
   };
 }

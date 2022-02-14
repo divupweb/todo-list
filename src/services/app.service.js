@@ -8,6 +8,7 @@ class AppService {
         method: "post",
         body: JSON.stringify(post),
       });
+
       return useRequest(request);
     } catch (error) {
       console.log(error);
@@ -33,10 +34,11 @@ class AppService {
       console.log(error);
     }
   }
-  async useRequest(request) {
-    const response = await fetch(request);
-    return await response.json();
-  }
+}
+
+async function useRequest(request) {
+  const response = await fetch(request);
+  return await response.json();
 }
 
 export const appService = new AppService(

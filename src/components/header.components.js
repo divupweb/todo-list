@@ -6,7 +6,7 @@ export class HeaderComponent extends Component {
   }
   init = () => {
     const $BTN = this.$element.querySelector(".js-header-start");
-    localStorage.getItem("privacy") ? this.hide(true) : null;
+    localStorage.getItem("privacy") ? this.privacyHide(true) : null;
     $BTN.addEventListener("click", buttonHandler.bind(this));
 
     const $animation_text_items = this.$element.getElementsByClassName(
@@ -17,6 +17,6 @@ export class HeaderComponent extends Component {
 }
 
 function buttonHandler() {
-  this.hide();
+  this.privacyHide();
   localStorage.setItem("privacy", true);
 }

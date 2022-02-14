@@ -1,3 +1,4 @@
+import "regenerator-runtime/runtime";
 import { HeaderComponent } from "../components/header.components";
 import { NavigationComponent } from "../components/navigation.components";
 import { CreateComponent } from "../components/create.components";

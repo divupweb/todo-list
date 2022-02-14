@@ -19,5 +19,8 @@
   "homepage": "https://github.com/divupweb/todo-list#readme",
   "devDependencies": {
     "sass": "^1.49.4"
+  },
+  "dependencies": {
+    "regenerator-runtime": "^0.13.9"
   }
 }
