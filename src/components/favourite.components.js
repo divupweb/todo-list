@@ -10,9 +10,7 @@ export class FavouriteComponent extends Component {
 
   init = () => {
     this.$element.addEventListener("click", linkClickHandler.bind(this));
-    localStorage.getItem("favourites")
-      ? null
-      : localStorage.setItem("favourites", "[]");
+    localStorage.getItem("favourites") ? null : localStorage.setItem("favourites", "[]");
   };
 
   onHide() {
@@ -22,9 +20,7 @@ export class FavouriteComponent extends Component {
   onShow() {
     const favourites = JSON.parse(localStorage.getItem("favourites"));
     const html = rednderList(favourites);
-    this.$element
-      .querySelector(".shared__posts-wrapper")
-      .insertAdjacentHTML("afterbegin", html);
+    this.$element.querySelector(".shared__posts-wrapper").insertAdjacentHTML("afterbegin", html);
   }
 }
 
@@ -38,10 +34,7 @@ async function linkClickHandler(event) {
 
     this.$element
       .querySelector(".shared__posts-wrapper")
-      .insertAdjacentHTML(
-        "afterbegin",
-        renderPost(post, { withButton: false })
-      );
+      .insertAdjacentHTML("afterbegin", renderPost(post, { withButton: false }));
   }
 }
 
@@ -52,12 +45,12 @@ function rednderList(list = []) {
         ${list
           .map(
             (i) =>
-              `<li>open favourite post -->  <a href ="#" class="js-link" data-id='${i.id}'>${i.title}</a></li>`
+              `<li><a href ="#" class="js-link" data-id='${i.id}'><i class="far fa-newspaper"></i><span>${i.title}</span></a></li>`
           )
           .join("")}
       
     </ul>`;
   } else {
-    return `<p class="favourite__no-data">There is nothing here yet</p>`;
+    return `<p class="favourite__no-data">There is nothing here yet :(</p>`;
   }
 }

@@ -23,6 +23,6 @@ export function renderPost(post, options = {}) {
 }
 
 function truncate(string) {
-  string.length > 155 ? (string = string.substring(0, 155) + " ...") : null;
+  string.length > 155 ? (string = string.substring(0, 154) + "...") : null;
   return string;
 }

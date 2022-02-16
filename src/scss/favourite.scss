@@ -1,16 +1,33 @@
 .favourite {
   display: none;
   &__no-data {
-    color: #a65353;
+    color: #616161;
   }
   &__list {
     font-size: 1rem;
     li {
       margin: 15px 0;
-      color: #a65353;
+      color: #616161;
+      display: flex;
+      align-items: center;
       a {
-        color: crimson;
+        color: #262626;
         text-transform: uppercase;
+        transition: all 0.3s ease;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        span {
+          margin-left: 10px;
+          pointer-events: none;
+        }
+        &:hover {
+          color: crimson;
+        }
+        i {
+          pointer-events: none;
+        }
       }
     }
   }
@@ -20,5 +37,6 @@
   }
   .shared__posts-item {
     width: 100%;
+    margin: 0;
   }
 }
