@@ -1,3 +1,24 @@
 .favourite {
   display: none;
+  &__no-data {
+    color: #a65353;
+  }
+  &__list {
+    font-size: 1rem;
+    li {
+      margin: 15px 0;
+      color: #a65353;
+      a {
+        color: crimson;
+        text-transform: uppercase;
+      }
+    }
+  }
+  &__wrapper {
+    display: block !important;
+    margin: 0px !important;
+  }
+  .shared__posts-item {
+    width: 100%;
+  }
 }

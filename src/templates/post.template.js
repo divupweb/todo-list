@@ -13,9 +13,16 @@ export function renderPost(post, options = {}) {
       <div class="shared__posts-item-head"><h4 class="shared__posts-item-title"><span>${
         post.title
       }</span></h4>${tag}</div>
-      <div class="shared__posts-item-text"><p>${post.fulltext}</p></div>
-      <div class="shared__posts-item-footer"><span class="shared__posts-item-data">${
+      <div class="shared__posts-item-text"><p>${
+        options.withButton ? truncate(post.fulltext) : post.fulltext
+      }</p></div>
+      <div class="shared__posts-item-footer"><span class="shared__posts-item-data"><i class="far fa-calendar"></i> ${
         post.date
       }</span>${options.withButton ? button : ""}</div>
   </div>`;
+}
+
+function truncate(string) {
+  string.length > 155 ? (string = string.substring(0, 155) + " ...") : null;
+  return string;
 }

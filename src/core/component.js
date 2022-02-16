@@ -5,8 +5,17 @@ export class Component {
   }
   init = () => {};
 
+  onShow() {}
+  onHide() {}
+
   hide = () => {
     this.$element.classList.remove("shared_page-show");
+    this.onHide();
+  };
+
+  show = () => {
+    this.$element.classList.add("shared_page-show");
+    this.onShow();
   };
 
   privacyHide = (trigger) => {
@@ -18,10 +27,6 @@ export class Component {
         this.$element.classList.add("shared__section-hide");
       }, 2000);
     }
-  };
-
-  show = () => {
-    this.$element.classList.add("shared_page-show");
   };
 
   textAnimation = ($elements, text) => {

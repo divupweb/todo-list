@@ -1,7 +1,7 @@
 .create-posts {
   display: none;
   &__form {
-    width: 440px;
+    width: 550px;
   }
   &__field {
     display: flex;
@@ -16,7 +16,10 @@
       display: flex;
       align-items: center;
       border: 1px solid #22272d;
+      border-radius: 5px 0 0 5px;
       cursor: pointer;
+      background-color: #22272d;
+      color: white;
     }
     &-title {
       padding: 0 10px;
@@ -26,6 +29,7 @@
       width: 100%;
       outline: none;
       font-size: 0.9rem;
+      border-radius: 0 5px 5px 0;
     }
     &-type {
       height: 40px;
@@ -35,6 +39,7 @@
       outline: none;
       background: white;
       padding-left: 6px;
+      border-radius: 0 5px 5px 0;
       cursor: pointer;
       option {
         height: 40px;
@@ -47,6 +52,7 @@
       outline: none;
       border: 1px solid #22272d;
       resize: none;
+      border-radius: 5px;
     }
   }
   &__button {
@@ -56,9 +62,11 @@
     transition: all 0.3s ease;
     text-transform: uppercase;
     font-size: 1.25rem;
+    background-color: darkgrey;
+    width: 100%;
   }
   &__button:hover {
-    background-color: grey;
+    background-color: #22272d;
     color: white;
   }
 }

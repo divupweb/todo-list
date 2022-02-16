@@ -10,7 +10,6 @@ export class PostsComponet extends Component {
   }
   init = () => {
     this.$element.addEventListener("click", buttonHadnler.bind(this));
-    this.onShow();
   };
 
   async onShow() {
@@ -26,20 +25,18 @@ export class PostsComponet extends Component {
   }
 
   onHide() {
-    this.$element.innerHTML = "";
+    this.$element.querySelector(".shared__posts-wrapper").innerHTML = "";
   }
 }
 function buttonHadnler(event) {
   event.preventDefault();
-  console.log(event);
-  console.log(event.target);
+
   const $el = event.target;
   const id = $el.dataset.id;
   const title = $el.dataset.title;
   if (id) {
-    console.log(id);
     let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
-    console.log(favourites);
+
     const candidate = favourites.find((p) => p.id === id);
     if (candidate) {
       $el.innerHTML = `<i class="far fa-star"></i></a>`;

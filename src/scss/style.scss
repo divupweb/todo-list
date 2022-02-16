@@ -3,12 +3,23 @@
 @import url(./createPosts.scss);
 @import url(./favourite.scss);
 @import url(./posts.scss);
+
+@mixin no-select($value) {
+  -webkit-touch-callout: $value; /* iOS Safari */
+  -webkit-user-select: $value; /* Chrome/Safari/Opera */
+  -khtml-user-select: $value; /* Konqueror */
+  -moz-user-select: $value; /* Firefox */
+  -ms-user-select: $value; /* Internet Explorer/Edge */
+  user-select: $value; /* Non-prefixed version, currently */
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   text-decoration: none;
   list-style: none;
+  @include no-select(none);
 }
 body {
   background: rgb(50, 40, 50);
@@ -37,7 +48,7 @@ body {
   }
   &__title {
     text-transform: uppercase;
-    color: #a65353;
+    color: crimson;
     font-size: 1.7rem;
     margin-bottom: 15px;
   }
@@ -63,11 +74,10 @@ body {
       margin: 15px;
       &-title {
         color: #bfbfbf;
-        font-size: 1rem;
+        font-size: 1.2rem;
         span {
-          text-transform: capitalize;
+          text-transform: uppercase;
           color: rgb(50, 40, 50);
-          font-size: 1.2rem;
         }
       }
       &-text {
@@ -79,6 +89,10 @@ body {
       &-data {
         color: #bfbfbf;
         font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 80px;
       }
       &-button {
         color: #bfbfbf;
@@ -102,8 +116,8 @@ body {
     }
   }
   &__invalid {
-    color: red;
-    box-shadow: 0 0px 15px rgba(255, 0, 0, 1);
+    color: crimson;
+    box-shadow: 0px 0px 25px rgba(255, 0, 0, 0.5);
   }
   &__validation-error {
     color: red;
@@ -158,7 +172,7 @@ body {
   }
   &__wrapper {
     width: 100%;
-    background: white;
+    background: whitesmoke;
     color: black;
     padding: 20px;
     min-height: 100vh;
